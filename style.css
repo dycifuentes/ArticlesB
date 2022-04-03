@@ -44,3 +44,9 @@ body {
 .email-footer{
     padding-top: 20px;
 }
+
+.form-newarticle{
+    max-width: 650px;
+    padding: 3rem;
+
+}
