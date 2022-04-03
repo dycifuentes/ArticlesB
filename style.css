@@ -14,11 +14,33 @@ body {
     color: rgb(63, 126, 121);
 }
 
-
-.top-header {
-    border-bottom: 4px solid rgb(161, 159, 159);
+.li-footer > a, .p-footer{
+    color: white;
 }
 
+.li-footer > a:hover {
+    color:rgb(63, 126, 121);
+}
+
+#main-title{
+     font-size: 3rem;
+     font-weight: bold;
+     text-align:left;
+     padding-top: 20px;
+}
+.top-header {
+    border-bottom: 4px solid rgb(80, 79, 79);
+}
+/*FOOTER*/
+
 .footer-container {
-    background-color: rgb(161, 159, 159);
+    background-color: rgb(80, 79, 79);
+}
+
+.img-footer{
+    padding-top: 20px;
+}
+
+.email-footer{
+    padding-top: 20px;
 }
