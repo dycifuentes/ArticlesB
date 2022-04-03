@@ -1,0 +1,24 @@
+body {
+    padding:0 36px;
+}
+
+/* *{
+    outline:1px solid red;
+} */
+
+.my-li > a:hover {
+    color: #ceaf59;
+}
+
+.my-li > a {
+    color: rgb(63, 126, 121);
+}
+
+
+.top-header {
+    border-bottom: 4px solid rgb(161, 159, 159);
+}
+
+.footer-container {
+    background-color: rgb(161, 159, 159);
+}
