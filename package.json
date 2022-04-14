@@ -1,0 +1,14 @@
+{
+  "name": "icodeproyect",
+  "version": "1.0.0",
+  "description": "Blog",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deyci",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
