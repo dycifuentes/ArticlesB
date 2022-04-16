@@ -1,5 +1,5 @@
 const express = require('express');
-
+const {PAGE_NOT_EXIST} = require ('./constans.js');
 const app = express ();
 
 
@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('*', (req, res) =>{
-    res.status(404).send('The page you are looking for does not exist')
+    res.status(404).send(PAGE_NOT_EXIST)
 });
 
 app.listen(3300, ()=>{
