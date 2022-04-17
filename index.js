@@ -4,18 +4,24 @@ const {PAGE_NOT_EXIST} = require ('./constans.js');
 const app = express ();
 
 app.set('view engine', 'ejs');
+// app.set('views', './views')
 
 
 app.get('/', (req, res) => {
-    res.render('index');
+    const articles =[
+        {title: 'Article 1', fragment: 'Lorem ipsum dolor sit amet consectetur'},
+        {title: 'Article 2', fragment: 'Lorem ipsum dolor sit amet consectetur'},
+        {title: 'Article 3', fragment: 'Lorem ipsum dolor sit amet consectetur'},
+    ];
+    res.render('index', {title: 'Home', articles});
 });
 
 app.get('/about', (req, res) => {
-    res.render('about');
+    res.render('about', {title: 'About'});
 });
 
 app.get('/newarticle', (req, res) => {
-    res.render('newarticle');
+    res.render('newarticle', {title: 'New Article'});
 });
 
 app.get('*', (req, res) =>{
