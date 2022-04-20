@@ -1,7 +1,14 @@
 const express = require('express');
 require('dotenv').config()
+const mongoose = require('mongoose')
+
 const {PAGE_NOT_EXIST} = require ('./constans.js');
 const app = express ();
+
+const mongoURI = 'mongodb+srv://newuser-1:user123@cluster0.wgjer.mongodb.net/blog-project?retryWrites=true&w=majority'
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true})
+  .then((result) =>console.log('Connected to database'))
+  .catch((err) => console.log(err))
 
 app.set('view engine', 'ejs');
 // app.set('views', './views')
