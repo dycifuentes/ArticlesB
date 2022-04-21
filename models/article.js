@@ -14,4 +14,8 @@ const articleSchema = new Schema ({
         type: String,
         required: true
     }
-}, {timestamps: true})
+}, {timestamps: true});
+
+
+const Article = mongoose.model('Article', articleSchema);
+module.exports = Article;

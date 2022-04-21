@@ -1,11 +1,14 @@
 const express = require('express');
 require('dotenv').config()
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const Article = require('./models/article');
 
 const {PAGE_NOT_EXIST} = require ('./constans.js');
 const app = express ();
+const MONGODBPW = process.env.MONGODBPW || ""
 
-const mongoURI = 'mongodb+srv://newuser-1:user123@cluster0.wgjer.mongodb.net/blog-project?retryWrites=true&w=majority'
+
+const mongoURI = `mongodb+srv://newuser-1:${MONGODBPW}@cluster0.wgjer.mongodb.net/blog-project?retryWrites=true&w=majority`
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true})
   .then((result) =>console.log('Connected to database'))
   .catch((err) => console.log(err))
@@ -15,6 +18,20 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('assets'));
 
+app.get('/add-article', (req, res) =>{
+const newarticle = new Article ({
+    title: 'The title',
+    fragment: 'the fragment',
+    body: 'the body'
+});
+newarticle.save()
+.then((result)=> {
+    res.send(result)
+})
+.catch((error) => {
+    console.log(err);
+});
+})
 
 app.get('/', (req, res) => {
     const articles =[
