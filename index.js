@@ -20,7 +20,7 @@ app.use(express.static('assets'));
 
 app.get('/add-article', (req, res) =>{
 const newarticle = new Article ({
-    title: 'The title',
+    title: 'The title 2',
     fragment: 'the fragment',
     body: 'the body'
 });
@@ -28,9 +28,19 @@ newarticle.save()
 .then((result)=> {
     res.send(result)
 })
-.catch((error) => {
+.catch((err) => {
     console.log(err);
 });
+})
+
+app.get('/all-articles', (req,res) => {
+    Article.find()
+    .then((result)=> {
+        res.send(result)
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 })
 
 app.get('/', (req, res) => {
