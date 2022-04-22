@@ -18,38 +18,39 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('assets'));
 
-app.get('/add-article', (req, res) =>{
-const newarticle = new Article ({
-    title: 'The title 2',
-    fragment: 'the fragment',
-    body: 'the body'
-});
-newarticle.save()
-.then((result)=> {
-    res.send(result)
-})
-.catch((err) => {
-    console.log(err);
-});
-})
+// app.get('/add-article', (req, res) =>{
+// const newarticle = new Article ({
+//     title: 'The title 2',
+//     fragment: 'the fragment',
+//     body: 'the body'
+// });
+// newarticle.save()
+// .then((result)=> {
+//     res.send(result)
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
+// })
 
-app.get('/all-articles', (req,res) => {
-    Article.find()
-    .then((result)=> {
-        res.send(result)
-    })
-    .catch((err) => {
-        console.log(err);
-    });
-})
+// app.get('/all-articles', (req,res) => {
+//     Article.find()
+//     .then((result)=> {
+//         res.send(result)
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+// })
 
 app.get('/', (req, res) => {
-    const articles =[
-        {title: 'Article 1', fragment: 'Lorem ipsum dolor sit amet consectetur'},
-        {title: 'Article 2', fragment: 'Lorem ipsum dolor sit amet consectetur'},
-        {title: 'Article 3', fragment: 'Lorem ipsum dolor sit amet consectetur'},
-    ];
-    res.render('index', {title: 'Home', articles});
+    Article.find().sort({ createdAt: -1})
+        .then((result)=> {
+            res.render('index', {title: 'Home', articles: result});
+        })
+        .catch((err) => {
+            console.log(err);
+        });    
 });
 
 app.get('/about', (req, res) => {
