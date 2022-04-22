@@ -1,5 +1,5 @@
 body {
-    padding:0 36px;
+    padding:0;
 }
 
 /* *{
@@ -34,7 +34,9 @@ body {
 /*FOOTER*/
 
 .footer-container {
-    background-color: rgb(80, 79, 79);
+    background-color: rgb(97, 94, 94);
+   
+    
 }
 
 .img-footer{
@@ -49,4 +51,8 @@ body {
     max-width: 650px;
     padding: 3rem;
 
+}
+
+.title{
+    padding-left: 40px;
 }
