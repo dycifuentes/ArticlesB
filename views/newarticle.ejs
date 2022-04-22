@@ -28,18 +28,18 @@
 <h1 class="continer title">NEW ARTICLE</h1>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing efugit mollitia officiis sit. Amet accusamus ad tenetur porro quod.</p>
 <section class="container">
-<form class ="form-newarticle">
+<form class ="form-newarticle" action="/" method="POST">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Title</label>
-        <input class="form-control" type="text" placeholder="" aria-label="default input example">
+        <input class="form-control" type="text" placeholder="" aria-label="default input example" name="title">
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Description</label>
-        <input class="form-control" type="text" placeholder="" aria-label="default input example">
+        <label for="exampleFormControlInput1" class="form-label">Fragment</label>
+        <input class="form-control" type="text" placeholder="" aria-label="default input example" name="fragment">
       </div>
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Content</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="body"></textarea>
       </div>
       <div class="mb-3">
         <button type="submit" class="btn btn-dark">Submit</button>

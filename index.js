@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 // app.set('views', './views')
 
 app.use(express.static('assets'));
+app.use(express.urlencoded({ extended: true }));
 
 // app.get('/add-article', (req, res) =>{
 // const newarticle = new Article ({
@@ -52,6 +53,19 @@ app.get('/', (req, res) => {
             console.log(err);
         });    
 });
+
+app.post('/', (req,res) =>{
+  const article =new Article(req.body);
+
+  article.save()
+  .then((result)=> {
+      res.redirect('/');
+   })
+   .catch((err) => {
+    console.log(err);
+   });    
+});
+ 
 
 app.get('/about', (req, res) => {
     res.render('about', {title: 'About'});
