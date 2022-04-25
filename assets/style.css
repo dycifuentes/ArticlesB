@@ -31,6 +31,11 @@ body {
 .top-header {
     border-bottom: 4px solid rgb(80, 79, 79);
 }
+
+.my-nav {
+    text-decoration: none;
+    color: black;
+}
 /*FOOTER*/
 
 .footer-container {

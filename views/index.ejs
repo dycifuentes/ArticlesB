@@ -33,8 +33,11 @@
         <% if (articles.length > 0) { %>
           <% articles.forEach(articles => { %>
         
-          <h2><%= articles.title %></h2>
-          <p><%= articles.fragment %></p>
+          <a class= my-nav href="/articles/<%= articles._id %>">
+            <h2><%= articles.title %></h2>
+            <p><%= articles.fragment %></p>
+           </a>
+          
         
           <% }) %>
         <%} else { %>

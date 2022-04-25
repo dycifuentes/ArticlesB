@@ -67,6 +67,7 @@ app.post('/', (req,res) =>{
 });
  
 
+
 app.get('/about', (req, res) => {
     res.render('about', {title: 'About'});
 });
@@ -74,6 +75,21 @@ app.get('/about', (req, res) => {
 app.get('/newarticle', (req, res) => {
     res.render('newarticle', {title: 'New Article'});
 });
+
+app.get('/articles/:id', (req, res) =>{
+     const id = mongoose.Types.ObjectId(req.params.id.trim());
+    //const id = req.params.id;
+    Article.findById(id)
+    .then(result => {
+        res.render('article', {title: 'Article Details', article: result});
+    })
+    .catch((err) => {
+        console.log(err);
+       });    
+});
+
+
+
 
 app.get('*', (req, res) =>{
     res.status(404).send(PAGE_NOT_EXIST)
