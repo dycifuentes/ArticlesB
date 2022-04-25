@@ -8,6 +8,31 @@ A blog with articles, with the following functionalities:
 - Delete a selected article.
 
 ---
+## HOW TO INSTALL
+
+1. Clone the repo
+git clone git@github.com:dycifuentes/ArticlesB.git
+2. Change directory
+```
+cd ArticlesB/
+```
+3. Install dependencies
+```
+npm install
+```
+4. Add config environment variables
+On the file: `.env ` with your credentials
+```
+PORT=3300
+MONGODBPW= *******
+```
+
+Update the mongoDB conection as need it in:
+index.js line 11
+
+### Prerequisites
+Nodejs: 16.14.1
+A mongodb server
 
 ## HOW TO USE:
 
