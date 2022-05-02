@@ -67,14 +67,15 @@ app.post('/', (req,res) =>{
 });
  
 
-
 app.get('/about', (req, res) => {
     res.render('about', {title: 'About'});
 });
 
+
 app.get('/newarticle', (req, res) => {
     res.render('newarticle', {title: 'New Article'});
 });
+
 
 app.get('/articles/:id', (req, res) =>{
      const id = mongoose.Types.ObjectId(req.params.id.trim());
@@ -88,8 +89,16 @@ app.get('/articles/:id', (req, res) =>{
        });    
 });
 
-
-
+app.delete('/articles/:id', (req,res) =>{
+    const id = mongoose.Types.ObjectId(req.params.id.trim());
+    Article.findByIdAndDelete(id)
+    .then(result =>{
+        res.json({ redirect: '/'});
+    }) 
+    .catch(err=>{
+        console.log(err);
+    })
+})
 
 app.get('*', (req, res) =>{
     res.status(404).send(PAGE_NOT_EXIST)
