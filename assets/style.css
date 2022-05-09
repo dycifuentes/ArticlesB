@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;700;900&display=swap');
+
 body {
-    padding:0;
+    font-family: 'Raleway', sans-serif !important;
+    padding:0 20px;
+    margin: 20px auto;
 }
 
- */*{
+ /*{
     outline:1px solid red;
 } */
 
@@ -27,6 +31,10 @@ body {
      font-weight: bold;
      text-align:left;
      padding-top: 20px;
+}
+
+.p-description {
+    text-align: justify;
 }
 .top-header {
     border-bottom: 4px solid rgb(80, 79, 79);
@@ -60,6 +68,8 @@ body {
 
 .title{
     padding-left: 40px;
+    padding-bottom: 40px; 
+    padding-top: 20px;
 }
 
 .btn-delete{
@@ -68,8 +78,8 @@ body {
     text-decoration: none;
     justify-self: flex-end;
     float: right;
-    box-shadow: 1px 2px 3px black;
-    color: black;
+    box-shadow: 1px 2px 3px rgb(80, 79, 79);
+    color: rgb(63, 126, 121);
 }
 
 .btn-delete:hover{
@@ -83,4 +93,6 @@ color:#ceaf59;
     padding-bottom: 20px;
 }
 
-
+.img-body{
+    float: right;
+}
